@@ -1,0 +1,20 @@
+<nav class="nav">
+  <a href="index.html">TOP</a>
+  <a href="service.html">事業内容</a>
+  <a href="company.html">会社概要</a>
+  <a href="works.html">施工実績</a>
+  <a href="contact.html">お問い合わせ</a>
+</nav>
+<h1>施工実績</h1>
+
+<div class="work">
+  <h3>都内オフィスビル</h3>
+  <p>工事内容：空調・換気設備改修</p>
+  <p>エリア：東京都</p>
+</div>
+
+<div class="work">
+  <h3>飲食店舗</h3>
+  <p>工事内容：給排水・換気設備</p>
+  <p>エリア：神奈川県</p>
+</div>
