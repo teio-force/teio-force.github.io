@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>会社概要｜株式会社テイオーフォース</title>
+<meta name="description" content="株式会社テイオーフォースの会社概要と取引先会社。">
+
+<style>
+:root{
+  --ink:#0b2233;
+  --muted:rgba(11,34,51,.72);
+  --line:rgba(11,34,51,.10);
+  --bg:#f7fbff;
+  --card:#ffffff;
+  --radius:20px;
+  --max:1120px;
+  --a1:#7ff6ff; --a2:#6bffd8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff,var(--bg))}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.head{max-width:var(--max);margin:0 auto;padding:14px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:12px}
+main{max-width:var(--max);margin:0 auto;padding:34px 14px 70px}
+h1{letter-spacing:.12em;margin:6px 0 12px}
+.lead{color:var(--muted);line-height:1.9;margin:0 0 18px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 14px 40px rgba(0,0,0,.05)}
+.card strong{display:block;margin-bottom:6px}
+.badge{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(135deg,var(--a1),var(--a2));font-weight:800}
+.list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
+@media(max-width:900px){.list{grid-template-columns:1fr}}
+.item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+footer{padding:40px 14px 60px;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="head">
+    <div style="font-weight:900;letter-spacing:.12em">TEIO FORCE</div>
+    <nav class="nav">
+      <a href="index.html">TOP</a>
+      <a href="service.html">事業内容</a>
+      <a href="company.html">会社概要</a>
+      <a href="works.html">施工実績</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="badge">COMPANY</div>
+  <h1>会社概要</h1>
+  <p class="lead">施工管理を軸に、見積作成から現場管理まで一貫して対応します。</p>
+
+  <div class="grid2">
+    <div class="card"><strong>会社名</strong>株式会社テイオーフォース</div>
+    <div class="card"><strong>代表取締役</strong>木原 進之介</div>
+    <div class="card"><strong>設立</strong>2024年3月15日</div>
+    <div class="card"><strong>所在地</strong>東京都足立区伊興2-10-9 シャレー伊興A6</div>
+    <div class="card"><strong>事業内容</strong>空調・換気・給排水・各設備断熱保温工事の施工管理／設備設計業務</div>
+    <div class="card"><strong>対応エリア</strong>相談による（基本：関東圏内）</div>
+  </div>
+
+  <div style="height:26px"></div>
+
+  <div class="badge">PARTNERS</div>
+  <h1 style="margin-top:10px">取引先会社</h1>
+  <div class="list">
+    <div class="item">株式会社バウハウス丸栄</div>
+    <div class="item">足立工業株式会社</div>
+    <div class="item">株式会社樹創</div>
+    <div class="item">株式会社オール</div>
+    <div class="item">株式会社銀寿</div>
+    <div class="item">株式会社ハルノヤ</div>
+    <div class="item">株式会社STP</div>
+    <div class="item">株式会社リョーズワークス</div>
+  </div>
+</main>
+
+<footer>© <span id="y"></span> TEIO FORCE Co.,Ltd</footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>
