@@ -3,32 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>株式会社テイオーフォース｜施工管理</title>
+<title>株式会社テイオーフォース</title>
 
 <style>
+/* ===== 共通 ===== */
 *{box-sizing:border-box}
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
   color:#fff;
-  background:#012;
 }
-a{text-decoration:none;color:inherit}
+a{color:inherit;text-decoration:none}
+:root{
+  --max:1100px;
+  --glass:rgba(255,255,255,.15);
+  --line:rgba(255,255,255,.25);
+}
 
 /* ===== 背景 ===== */
 .bg{
   position:fixed; inset:0;
-  background:url("waikiki.jpeg?v=1000") center/cover no-repeat;
+  background:url("waikiki.jpeg?v=1200") center/cover no-repeat;
   filter:brightness(1.15) saturate(1.15);
   z-index:-2;
 }
 .ov{
   position:fixed; inset:0;
-  background:linear-gradient(
-    to bottom,
-    rgba(0,40,80,.25),
-    rgba(0,40,80,.55)
-  );
+  background:linear-gradient(to bottom,rgba(0,40,80,.25),rgba(0,40,80,.55));
   z-index:-1;
 }
 
@@ -40,14 +41,13 @@ header{
   background:linear-gradient(180deg,rgba(0,30,60,.6),rgba(0,30,60,0));
 }
 .head{
-  max-width:1200px;
+  max-width:var(--max);
   margin:auto;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 }
 .logo-text{font-weight:900;letter-spacing:.12em}
-
 .nav{display:flex;gap:12px}
 .nav a{
   padding:10px 14px;
@@ -55,19 +55,18 @@ header{
   background:rgba(255,255,255,.2);
   font-size:13px;
 }
+.menu-btn{display:none}
 
 /* mobile */
-.menu-btn{display:none}
 .mobile-nav{display:none}
-
 @media(max-width:900px){
   .nav{display:none}
   .menu-btn{
     display:block;
     padding:10px 14px;
     border-radius:999px;
-    border:none;
     background:rgba(255,255,255,.25);
+    border:none;
     color:#fff;
     font-weight:800;
   }
@@ -113,7 +112,7 @@ h1{
 }
 .btn{
   display:inline-block;
-  margin:8px;
+  margin-top:16px;
   padding:14px 26px;
   border-radius:999px;
   background:linear-gradient(135deg,#7ff6ff,#6bffd8);
@@ -124,8 +123,7 @@ h1{
 </head>
 
 <body>
-<div class="bg"></div>
-<div class="ov"></div>
+<div class="bg"></div><div class="ov"></div>
 
 <header>
   <div class="head">
@@ -151,7 +149,7 @@ h1{
 
 <section class="hero">
   <div>
-    <img src="logo-main.jpg?v=1000" alt="Teio Force">
+    <img src="logo-main.jpg?v=1200" alt="Teio Force">
     <h1>現場を止めない。<br>空調・給排気設備の施工管理</h1>
     <p class="lead">
       空調・換気・給排水・断熱保温工事の施工管理。<br>
@@ -165,7 +163,7 @@ h1{
 <script>
 const btn=document.getElementById("menuBtn");
 const nav=document.getElementById("mobileNav");
-btn.onclick=()=>{nav.style.display=nav.style.display==="block"?"none":"block";}
+btn.onclick=()=>nav.style.display=nav.style.display==="block"?"none":"block";
 </script>
 </body>
 </html>
