@@ -1,523 +1,181 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>株式会社テイオーフォース｜施工管理</title>
-  <meta name="description" content="株式会社テイオーフォース｜空調・換気・給排水・断熱保温工事の施工管理。見積作成から施工管理まで一貫対応。" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>株式会社テイオーフォース</title>
 
   <style>
-    :root{
-      /* ▼ファイル名が違う場合だけここを変更 */
-      --bg-url: url("waikiki.jpeg?v=201");
-      --logo-url: url("logo.png?v=201");
-
-      --navy:#071a2b;
-      --ink:rgba(255,255,255,.96);
-      --muted:rgba(255,255,255,.80);
-      --line:rgba(255,255,255,.22);
-
-      /* Waikiki morning palette */
-      --sky:#7ee8ff;
-      --sea:#2fd8e8;
-      --mint:#6bffd8;
-      --sun:#ffe08a;
-
-      --shadow: 0 22px 80px rgba(0,0,0,.22);
-      --shadow2: 0 12px 34px rgba(0,0,0,.18);
-      --radius: 28px;
-      --max: 1120px;
-
-      /* label look */
-      --label-bg: rgba(255,255,255,.92);
-      --label-border: rgba(255,255,255,.65);
-      --label-ink: rgba(0,0,0,.72);
-      --label-shadow: 0 18px 45px rgba(0,0,0,.22);
-      --label-inner: inset 0 1px 0 rgba(255,255,255,.55), inset 0 -10px 30px rgba(0,0,0,.06);
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-        "Hiragino Sans","Noto Sans JP","Yu Gothic","Meiryo", Arial, sans-serif;
-      color:var(--ink);
-      background: var(--navy);
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+      color:#fff;
+      background:#000;
       overflow-x:hidden;
-      line-height:1.85;
     }
-    a{color:inherit;text-decoration:none}
 
-    /* ===== iPhone/Safariで背景が消えにくい描画 ===== */
+    /* ===== 背景（ワイキキ） ===== */
     body::before{
       content:"";
       position:fixed;
       inset:0;
+      background:url("waikiki.jpeg?v=300") center/cover no-repeat;
+      filter:brightness(1.15) saturate(1.15);
+      transform:scale(1.05);
       z-index:-2;
-
-      background-image: var(--bg-url);
-      background-size: cover;
-      background-repeat:no-repeat;
-      background-position: center var(--bg-pos, 50%);
-
-      transform: scale(1.06);
-      filter: saturate(1.12) contrast(1.02);
-      will-change: background-position;
     }
     body::after{
       content:"";
       position:fixed;
       inset:0;
+      background:linear-gradient(
+        to bottom,
+        rgba(0,30,60,.25),
+        rgba(0,30,60,.45)
+      );
       z-index:-1;
-      pointer-events:none;
-      background:
-        radial-gradient(900px 520px at 70% 12%, rgba(255,255,255,.30), transparent 62%),
-        radial-gradient(900px 520px at 18% 12%, rgba(126,232,255,.20), transparent 62%),
-        radial-gradient(900px 520px at 70% 60%, rgba(255,224,138,.14), transparent 65%),
-        linear-gradient(180deg, rgba(7,26,43,.06) 0%, rgba(7,26,43,.18) 42%, rgba(7,26,43,.40) 100%);
     }
 
-    /* ===== Header ===== */
-    header{
-      position:fixed; top:0; left:0; right:0;
-      z-index:50;
-      padding: 14px 16px;
-      background: linear-gradient(180deg, rgba(7,26,43,.55), rgba(7,26,43,0));
-    }
-    .header-inner{
-      max-width: var(--max);
-      margin:0 auto;
-      display:flex; align-items:center; justify-content:space-between;
-      gap:10px;
-    }
-
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.16);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow2);
-    }
-
-    /* ✅ ヘッダーのロゴも「ラベル」化 */
-    .mark-label{
-      width:46px; height:36px;
-      border-radius: 14px;
-      background: var(--label-bg);
-      border: 1px solid rgba(0,0,0,.08);
-      box-shadow: var(--label-shadow);
-      position:relative;
-      overflow:hidden;
-      flex:0 0 auto;
-    }
-    .mark-label::before{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.70), rgba(255,255,255,0) 45%),
-        radial-gradient(180px 60px at 30% 0%, rgba(255,255,255,.55), transparent 60%);
-      opacity:.85;
-      pointer-events:none;
-    }
-    .mark-label::after{
-      content:"";
-      position:absolute; inset:6px 8px;
-      background: var(--logo-url) center/contain no-repeat;
-    }
-
-    .brand strong{
-      display:block;
-      font-size:12px;
-      letter-spacing:.14em;
-      color: rgba(0,0,0,.76);
-      text-transform: uppercase;
-    }
-    .brand span{
-      display:block;
-      font-size:11px;
-      letter-spacing:.06em;
-      color: rgba(0,0,0,.58);
-    }
-
-    nav{display:flex; gap:8px; flex-wrap:wrap; font-size:12px;}
-    nav a{
-      padding: 9px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.18);
-      background: rgba(7,26,43,.18);
-      backdrop-filter: blur(10px);
-      color: rgba(255,255,255,.94);
-    }
-    @media(max-width:920px){ nav{display:none;} }
-
-    /* ===== Hero ===== */
+    /* ===== HERO ===== */
     .hero{
       min-height:100vh;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding: 96px 16px 72px;
+      padding:100px 16px 80px;
       text-align:center;
-      position:relative;
     }
-    .hero-inner{ width:min(var(--max), 92vw); }
 
-    .glass{
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.16);
-      backdrop-filter: blur(16px);
-      box-shadow: var(--shadow);
-      padding: 34px 22px;
-      position:relative;
-      overflow:hidden;
+    /* ロゴ（枠なし・巨大） */
+    .logo{
+      max-width:420px;
+      width:85%;
+      margin:0 auto 28px;
     }
-    .glass::before{
-      content:"";
-      position:absolute; inset:-60% -40% auto -40%;
-      height:220%;
-      background:
-        radial-gradient(520px 320px at 30% 30%, rgba(255,255,255,.26), transparent 62%),
-        radial-gradient(620px 340px at 75% 25%, rgba(47,216,232,.18), transparent 65%),
-        radial-gradient(620px 340px at 65% 65%, rgba(107,255,216,.12), transparent 70%);
-      transform: rotate(10deg);
-      pointer-events:none;
-    }
-    .glass > *{position:relative; z-index:1}
-
-    /* ✅ ここが「ロゴをラベル化」本体（ステッカー風） */
-    .logo-label{
-      width: 120px;
-      height: 92px;
-      margin: 0 auto 16px;
-      border-radius: 26px;
-      background: var(--label-bg);
-      border: 1px solid rgba(0,0,0,.10);
-      box-shadow: var(--label-shadow), var(--label-inner);
-      position:relative;
-      overflow:hidden;
-      transform: translateY(0);
-    }
-    /* キラっとする光沢 */
-    .logo-label::before{
-      content:"";
-      position:absolute; inset:-40% -30% auto -30%;
-      height:170%;
-      background:
-        linear-gradient(115deg,
-          rgba(255,255,255,0) 0%,
-          rgba(255,255,255,.58) 38%,
-          rgba(255,255,255,0) 64%);
-      transform: rotate(10deg);
-      opacity:.75;
-      pointer-events:none;
-    }
-    /* ちょい立体感の縁 */
-    .logo-label::after{
-      content:"";
-      position:absolute; inset:0;
-      border-radius: 26px;
-      border: 1px solid rgba(255,255,255,.60);
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
-      pointer-events:none;
-    }
-    .logo-img{
-      position:absolute;
-      inset: 18px 16px;
-      background: var(--logo-url) center/contain no-repeat;
-    }
-    /* 右下に小さな“ラベル角”を作る（可愛い） */
-    .corner{
-      position:absolute;
-      right:-18px; bottom:-18px;
-      width: 60px; height:60px;
-      background: rgba(7,26,43,.10);
-      transform: rotate(20deg);
-      border-radius: 18px;
-      filter: blur(.2px);
+    .logo img{
+      width:100%;
+      height:auto;
+      display:block;
     }
 
     h1{
-      margin: 0 0 10px;
-      font-size: clamp(28px, 4.8vw, 50px);
-      letter-spacing:.12em;
-      line-height:1.18;
-      text-shadow: 0 18px 50px rgba(0,0,0,.18);
+      font-size:clamp(28px,5vw,48px);
+      line-height:1.3;
+      letter-spacing:.08em;
+      margin:0 0 16px;
+      text-shadow:0 10px 30px rgba(0,0,0,.4);
     }
-    .en{
-      margin: 0 0 14px;
-      font-style: italic;
-      letter-spacing:.28em;
-      color: rgba(255,255,255,.92);
-    }
+
     .lead{
-      margin: 0 auto;
-      max-width: 860px;
-      font-size: 14px;
-      color: rgba(255,255,255,.94);
-      letter-spacing:.06em;
+      font-size:14px;
+      line-height:1.9;
+      opacity:.95;
+      max-width:720px;
+      margin:0 auto 28px;
     }
-    .lead .line2{ color: rgba(255,255,255,.82); }
 
     .cta{
-      margin-top: 22px;
       display:flex;
+      gap:14px;
       justify-content:center;
-      gap:12px;
       flex-wrap:wrap;
     }
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(7,26,43,.18);
-      backdrop-filter: blur(10px);
-      color: rgba(255,255,255,.96);
-      font-weight: 900;
-      letter-spacing:.06em;
-      box-shadow: var(--shadow2);
-      min-width: 140px;
+      padding:14px 22px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#7ee8ff,#6bffd8);
+      color:#003c44;
+      font-weight:700;
+      text-decoration:none;
+      min-width:160px;
     }
-    .btn.primary{
-      border: none;
-      background: linear-gradient(135deg, var(--sky), var(--mint));
-      color: rgba(0,52,60,.92);
+    .btn.sub{
+      background:rgba(255,255,255,.25);
+      color:#fff;
+      backdrop-filter:blur(8px);
     }
 
-    .scroll{
-      position:absolute;
-      left:50%;
-      bottom: 22px;
-      transform: translateX(-50%);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:10px;
-      color: rgba(255,255,255,.88);
-      letter-spacing:.22em;
-      font-size: 11px;
-      text-transform: uppercase;
-      user-select:none;
+    /* ===== セクション ===== */
+    section{
+      padding:70px 16px;
+      text-align:center;
     }
-    .line{
-      width:1px;
-      height:42px;
-      background: linear-gradient(180deg, rgba(255,255,255,.0), rgba(255,255,255,.78), rgba(255,255,255,.0));
-      animation: lineMove 1.8s ease-in-out infinite;
-    }
-    @keyframes lineMove{
-      0%,100%{transform: translateY(0); opacity:.75}
-      50%{transform: translateY(8px); opacity:1}
+    .box{
+      max-width:900px;
+      margin:0 auto;
+      background:rgba(255,255,255,.12);
+      border-radius:28px;
+      padding:32px 22px;
+      backdrop-filter:blur(14px);
     }
 
-    /* ===== Sections ===== */
-    .section{ padding: 70px 16px; }
-    .container{ width:min(var(--max), 92vw); margin:0 auto; }
-
-    .panel{
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.14);
-      backdrop-filter: blur(14px);
-      box-shadow: var(--shadow2);
-      padding: 24px;
-      transform: translateY(18px);
-      opacity: 0;
-      transition: .75s ease;
-    }
-    .panel.show{ transform: translateY(0); opacity: 1; }
-
-    h2{ margin:0 0 12px; font-size:18px; letter-spacing:.14em; }
-    .sub{ margin:0 0 18px; color:rgba(255,255,255,.90); font-size:13px; letter-spacing:.06em; }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    @media (max-width: 860px){ .grid{grid-template-columns:1fr} }
-
-    .card{
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(7,26,43,.16);
-      padding: 16px;
-      color: rgba(255,255,255,.95);
-    }
-    .card strong{
-      display:block;
-      margin-bottom: 6px;
-      letter-spacing:.06em;
-      color: rgba(255,255,255,.98);
+    h2{
+      margin-top:0;
+      letter-spacing:.12em;
     }
 
     footer{
-      padding: 30px 16px 60px;
+      padding:40px 16px 60px;
       text-align:center;
-      color: rgba(255,255,255,.74);
-      font-size: 12px;
-      letter-spacing:.06em;
-    }
-
-    .cardlink{
-      margin-top:14px;
       font-size:12px;
-      letter-spacing:.08em;
-      color: rgba(255,255,255,.92);
-    }
-    .cardlink a{
-      border-bottom: 1px solid rgba(255,255,255,.55);
-      padding-bottom:2px;
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .panel{transition:none}
-      .line{animation:none}
+      opacity:.7;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="header-inner">
-      <a class="brand" href="#top" aria-label="トップへ">
-        <div class="mark-label" aria-hidden="true"></div>
-        <div>
-          <strong>TEIO FORCE</strong>
-          <span>Construction Management</span>
-        </div>
-      </a>
 
-      <nav aria-label="ページ内ナビ">
-        <a href="#service">事業内容</a>
-        <a href="#company">会社概要</a>
-        <a href="#contact">お問い合わせ</a>
-      </nav>
+  <!-- ===== HERO ===== -->
+  <div class="hero">
+    <div>
+      <div class="logo">
+        <img src="logo-main.jpg?v=300" alt="Teio-Force Co.,Ltd">
+      </div>
+
+      <h1>
+        現場を止めない。<br>
+        空調・給排気設備の施工管理
+      </h1>
+
+      <p class="lead">
+        空調・換気・給排水・断熱保温工事の施工管理。<br>
+        見積作成から施工管理まで一貫対応し、<br>
+        朝のワイキキのように、現場を軽やかに支えます。
+      </p>
+
+      <div class="cta">
+        <a class="btn" href="#contact">お問い合わせ</a>
+        <a class="btn sub" href="tel:08058207488">080-5820-7488</a>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <main id="top" style="position:relative;">
-    <section class="hero" aria-label="ファーストビュー">
-      <div class="hero-inner">
-        <div class="glass">
-          <div class="logo-label" aria-hidden="true">
-            <div class="logo-img"></div>
-            <div class="corner" aria-hidden="true"></div>
-          </div>
+  <!-- ===== 会社概要 ===== -->
+  <section>
+    <div class="box">
+      <h2>会社概要</h2>
+      <p>
+        株式会社テイオーフォース<br>
+        代表取締役　木原 進之介<br><br>
+        空調・換気・給排水・断熱保温工事の施工管理
+      </p>
+    </div>
+  </section>
 
-          <h1>現場を止めない。<br>空調・給排気設備の施工管理</h1>
-          <div class="en">TEIO FORCE</div>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="box">
+      <h2>お問い合わせ</h2>
+      <p>
+        メール：teio-force@outlook.jp<br>
+        電話：080-5820-7488
+      </p>
+    </div>
+  </section>
 
-          <p class="lead">
-            空調・換気・給排水・各設備断熱保温工事の施工管理。<br>
-            <span class="line2">見積作成から施工管理まで一貫対応し、柔軟な協力体制で現場を支えます。</span><br>
-            対応エリア：関東圏内（その他はご相談）
-          </p>
+  <footer>
+    © 2026 TEIO FORCE Co.,Ltd
+  </footer>
 
-          <div class="cta" role="group" aria-label="お問い合わせ">
-            <a class="btn primary" href="#contact">お問い合わせ</a>
-            <a class="btn" href="tel:08058207488">電話</a>
-            <a class="btn" href="mailto:teio-force@outlook.jp">メール</a>
-          </div>
-
-          <div class="cardlink">
-            名刺・QR用ページ： <a href="./card.html">/card.html</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="scroll" aria-hidden="true">
-        <div>Scroll Down</div>
-        <div class="line"></div>
-      </div>
-    </section>
-
-    <section class="section" id="service">
-      <div class="container">
-        <div class="panel">
-          <h2>事業内容</h2>
-          <p class="sub">見積作成から施工管理まで、ワンストップで対応</p>
-          <div class="grid">
-            <div class="card"><strong>空調設備工事</strong>見積作成〜施工管理</div>
-            <div class="card"><strong>換気工事</strong>見積作成〜施工管理</div>
-            <div class="card"><strong>給排水設備工事</strong>見積作成〜施工管理</div>
-            <div class="card"><strong>各設備断熱保温工事</strong>見積作成〜施工管理</div>
-            <div class="card"><strong>柔軟な対応力</strong>業者仲間が多く、調整に強い</div>
-            <div class="card"><strong>一貫対応</strong>見積〜現場管理まで一本化</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="company">
-      <div class="container">
-        <div class="panel">
-          <h2>会社概要</h2>
-          <p class="sub">Company Profile</p>
-          <div class="grid">
-            <div class="card"><strong>会社名</strong>株式会社テイオーフォース</div>
-            <div class="card"><strong>代表取締役</strong>木原 進之介</div>
-            <div class="card"><strong>所在地</strong>東京都足立区伊興2-10-9 シャレー伊興A6</div>
-            <div class="card"><strong>設立</strong>2024年3月15日</div>
-            <div class="card"><strong>事業内容</strong>空調・換気・給排水・断熱保温工事の施工管理</div>
-            <div class="card"><strong>対応エリア</strong>相談による（基本：関東圏内）</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="panel">
-          <h2>お問い合わせ</h2>
-          <p class="sub">施工管理・お見積りのご相談はお気軽にどうぞ</p>
-          <div class="grid">
-            <div class="card"><strong>メール</strong><a href="mailto:teio-force@outlook.jp">teio-force@outlook.jp</a></div>
-            <div class="card"><strong>電話</strong><a href="tel:08058207488">080-5820-7488</a></div>
-            <div class="card"><strong>営業時間</strong>ご連絡いただければ折り返します</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> TEIO FORCE Inc.
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // reveal panels
-    const panels = document.querySelectorAll(".panel");
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting) e.target.classList.add("show");
-      });
-    }, {threshold: 0.18});
-    panels.forEach(p=>io.observe(p));
-
-    // Parallax (background-position for body::before)
-    let ticking = false;
-    function updateParallax(){
-      const y = window.scrollY || 0;
-      const pos = 50 - Math.min(18, y / 130);
-      document.documentElement.style.setProperty('--bg-pos', `${pos}%`);
-      ticking = false;
-    }
-    window.addEventListener("scroll", () => {
-      if (!ticking){
-        window.requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
-    }, {passive:true});
-    updateParallax();
-  </script>
 </body>
 </html>
