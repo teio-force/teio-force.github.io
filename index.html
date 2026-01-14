@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="株式会社テイオーフォース｜空調・ダクト・給排気設備の施工管理。見積作成から施工管理まで一貫対応（東京都足立区／関東対応）。" />
+  <title>株式会社テイオーフォース｜空調・換気・給排水設備工事の施工管理</title>
+
+  <style>
+    :root{
+      --navy:#0b2a4a;
+      --navy2:#0f3a63;
+      --ink:#0f172a;
+      --muted:#475569;
+      --bg:#f7fbff;
+      --card:#ffffff;
+      --line:rgba(15, 23, 42, .12);
+      --wave1:#cfe9ff;
+      --wave2:#8fd0ff;
+      --accent:#2aa7ff;
+      --shadow: 0 10px 30px rgba(2, 6, 23, .12);
+      --radius: 18px;
+      --max: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+                   "Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",
+                   "Yu Gothic", "Meiryo", Arial, sans-serif;
+      color:var(--ink);
+      background: radial-gradient(1200px 900px at 20% -10%, rgba(143,208,255,.55), transparent 60%),
+                  radial-gradient(1200px 900px at 100% 0%, rgba(207,233,255,.7), transparent 55%),
+                  linear-gradient(180deg, #ffffff, var(--bg) 40%, #ffffff);
+      line-height:1.8;
+    }
+
+    a{color:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.72);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(15, 23, 42, .08);
+    }
+    .header-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none;
+    }
+    .mark{
+      width:42px; height:42px; border-radius:12px;
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      position:relative; overflow:hidden;
+      box-shadow: 0 10px 20px rgba(11,42,74,.25);
+    }
+    .mark::before{
+      content:"";
+      position:absolute; inset:-40% -20% auto -20%;
+      height:120%;
+      background: radial-gradient(circle at 30% 60%, rgba(143,208,255,.9), transparent 60%);
+      transform: rotate(-12deg);
+    }
+    .brand strong{display:block; font-size:14px; letter-spacing:.04em}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+    nav{
+      display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;
+      font-size:13px;
+    }
+    nav a{
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid transparent;
+      color:rgba(15, 23, 42, .85);
+    }
+    nav a:hover{border-color: rgba(42,167,255,.45); background: rgba(42,167,255,.08)}
+
+    /* Hero */
+    .hero{
+      padding:54px 0 28px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr; gap:18px}
+    }
+
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.72));
+      border:1px solid rgba(15, 23, 42, .08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute; inset:auto -20% -40% -20%;
+      height:240px;
+      background:
+        radial-gradient(120px 80px at 20% 40%, rgba(143,208,255,.55), transparent 70%),
+        radial-gradient(140px 90px at 60% 20%, rgba(42,167,255,.22), transparent 70%),
+        radial-gradient(180px 120px at 85% 60%, rgba(207,233,255,.8), transparent 70%);
+      filter: blur(2px);
+      transform: rotate(-6deg);
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(42,167,255,.35);
+      background:rgba(42,167,255,.08);
+      color:rgba(11,42,74,.95);
+      font-size:12px;
+      letter-spacing:.06em;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background:var(--accent);
+      box-shadow: 0 0 0 5px rgba(42,167,255,.18);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(26px, 3.2vw, 40px);
+      line-height:1.25;
+      letter-spacing:.02em;
+    }
+    .lead{
+      margin:0 0 18px;
+      color:rgba(15, 23, 42, .82);
+      font-size:15px;
+      position:relative;
+      z-index:1;
+    }
+    .cta{
+      display:flex; gap:12px; flex-wrap:wrap;
+      position:relative; z-index:2;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      text-decoration:none;
+      border:1px solid rgba(15, 23, 42, .12);
+      background:#fff;
+      box-shadow: 0 10px 25px rgba(2,6,23,.08);
+      font-weight:600;
+      font-size:14px;
+      letter-spacing:.02em;
+    }
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      color:#fff;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0)}
+    .btn small{font-weight:500; opacity:.9}
+    .icon{
+      width:18px; height:18px; display:inline-block;
+      fill:currentColor;
+      opacity:.95;
+    }
+
+    .side-card{
+      border-radius: var(--radius);
+      border:1px solid rgba(15, 23, 42, .08);
+      background:rgba(255,255,255,.78);
+      padding:22px;
+      box-shadow: 0 10px 24px rgba(2,6,23,.08);
+      position:relative;
+      overflow:hidden;
+    }
+    .side-card::before{
+      content:"";
+      position:absolute; inset:-40% -25% auto -25%;
+      height:160%;
+      background:
+        linear-gradient(180deg, rgba(207,233,255,.75), transparent 60%),
+        radial-gradient(circle at 30% 45%, rgba(143,208,255,.55), transparent 65%);
+      transform: rotate(10deg);
+    }
+    .side-card > *{position:relative; z-index:1}
+    .meta{
+      display:grid; gap:10px;
+      font-size:13px;
+      color:rgba(15, 23, 42, .82);
+    }
+    .meta .row{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(15, 23, 42, .08);
+      background: rgba(255,255,255,.72);
+    }
+    .meta .label{
+      min-width:84px;
+      font-weight:700;
+      color:rgba(11,42,74,.95);
+    }
+
+    /* Sections */
+    section{padding:34px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    h2{
+      margin:0;
+      font-size:22px;
+      letter-spacing:.02em;
+      color:rgba(11,42,74,.98);
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .grid-3{grid-template-columns:1fr}
+    }
+    .card{
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.88);
+      border:1px solid rgba(15, 23, 42, .08);
+      box-shadow: 0 10px 22px rgba(2,6,23,.06);
+      padding:18px;
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:16px;
+      letter-spacing:.02em;
+    }
+    .card p{margin:0; color:rgba(15, 23, 42, .78); font-size:14px}
+
+    .list{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .list li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px 14px;
+      border-radius:16px;
+      background: rgba(255,255,255,.86);
+      border:1px solid rgba(15, 23, 42, .08);
+      box-shadow: 0 10px 22px rgba(2,6,23,.05);
+    }
+    .check{
+      width:22px; height:22px; flex:0 0 auto;
+      border-radius:8px;
+      background: rgba(42,167,255,.14);
+      display:grid; place-items:center;
+      border:1px solid rgba(42,167,255,.35);
+      margin-top:2px;
+    }
+    .check svg{width:14px; height:14px; fill: rgba(11,42,74,.95)}
+    .muted{color:var(--muted)}
+    .note{
+      margin-top:12px;
+      color:rgba(71,85,105,.92);
+      font-size:12px;
+    }
+
+    /* Contact */
+    .contact-wrap{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .contact-wrap{grid-template-columns:1fr}
+    }
+    .contact-box{
+      padding:22px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(11,42,74,.96), rgba(15,58,99,.92));
+      color:#fff;
+      box-shadow: 0 18px 38px rgba(11,42,74,.25);
+      border:1px solid rgba(255,255,255,.16);
+      position:relative;
+      overflow:hidden;
+    }
+    .contact-box::after{
+      content:"";
+      position:absolute; inset:auto -35% -55% -35%;
+      height:320px;
+      background:
+        radial-gradient(180px 120px at 20% 45%, rgba(143,208,255,.65), transparent 70%),
+        radial-gradient(220px 150px at 60% 35%, rgba(42,167,255,.35), transparent 70%),
+        radial-gradient(260px 180px at 85% 65%, rgba(207,233,255,.55), transparent 70%);
+      transform: rotate(-6deg);
+      filter: blur(2px);
+      opacity:.95;
+    }
+    .contact-box > *{position:relative; z-index:1}
+    .contact-box h2{color:#fff}
+    .contact-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+    .btn.light{
+      background: rgba(255,255,255,.95);
+      border-color: transparent;
+      color: rgba(11,42,74,.98);
+      box-shadow: 0 10px 25px rgba(2,6,23,.18);
+    }
+    .btn.ghost{
+      background: transparent;
+      border:1px solid rgba(255,255,255,.35);
+      color:#fff;
+      box-shadow:none;
+    }
+
+    /* Wave separators */
+    .wave{
+      display:block;
+      width:100%;
+      height:70px;
+    }
+    .wave.top{margin-top:22px}
+    .wave.bottom{margin-bottom:-10px}
+
+    footer{
+      padding:28px 0 46px;
+      color:rgba(71,85,105,.9);
+      font-size:12px;
+    }
+    .footer-inner{
+      display:flex; flex-wrap:wrap; gap:12px;
+      align-items:center; justify-content:space-between;
+      border-top:1px solid rgba(15, 23, 42, .08);
+      padding-top:14px;
+    }
+
+    /* Accessibility */
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); border:0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="株式会社テイオーフォース トップへ">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <strong>株式会社テイオーフォース</strong>
+            <span>空調・換気・給排水・断熱保温｜施工管理</span>
+          </div>
+        </a>
+
+        <nav aria-label="ページ内ナビゲーション">
+          <a href="#strength">強み</a>
+          <a href="#service">事業内容</a>
+          <a href="#works">施工実績</a>
+          <a href="#company">会社概要</a>
+          <a href="#contact">お問い合わせ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="container">
+      <section class="hero" aria-label="ヒーロー">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <div class="kicker"><span class="dot" aria-hidden="true"></span>名刺代わりの会社案内サイト</div>
+            <h1>現場を止めない。<br>空調・ダクト・給排気設備の施工管理会社</h1>
+            <p class="lead">
+              東京都足立区を拠点に、空調・換気・給排水・各設備断熱保温工事の
+              <strong>見積作成から施工管理まで一貫対応</strong>いたします。
+            </p>
+
+            <div class="cta" role="group" aria-label="お問い合わせ導線">
+              <a class="btn primary" href="#contact">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+                お問い合わせ
+              </a>
+              <a class="btn" href="mailto:teio-force@outlook.jp">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+                メール
+                <small>teio-force@outlook.jp</small>
+              </a>
+              <a class="btn" href="tel:08058207488">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                電話
+                <small>080-5820-7488</small>
+              </a>
+            </div>
+          </div>
+
+          <aside class="side-card" aria-label="会社情報サマリー">
+            <div class="meta">
+              <div class="row">
+                <div class="label">拠点</div>
+                <div>東京都足立区</div>
+              </div>
+              <div class="row">
+                <div class="label">対応</div>
+                <div>関東圏内（その他エリアはご相談）</div>
+              </div>
+              <div class="row">
+                <div class="label">領域</div>
+                <div>空調・換気・給排水・断熱保温（施工管理）</div>
+              </div>
+              <div class="row">
+                <div class="label">見積</div>
+                <div>見積作成〜施工管理まで一貫</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Wave separator -->
+        <svg class="wave top" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,48 C120,20 240,20 360,48 C480,76 600,76 720,48 C840,20 960,20 1080,48 C1200,76 1320,76 1440,48 L1440,120 L0,120 Z"
+                fill="rgba(143,208,255,.55)"></path>
+          <path d="M0,68 C160,28 320,28 480,68 C640,108 800,108 960,68 C1120,28 1280,28 1440,68 L1440,120 L0,120 Z"
+                fill="rgba(207,233,255,.75)"></path>
+        </svg>
+      </section>
+
+      <section id="strength" aria-label="強み">
+        <div class="section-title">
+          <div>
+            <h2>私たちの強み</h2>
+            <p class="sub">現場の安定稼働と品質を支える、施工管理としての価値</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>柔軟な対応力</h3>
+            <p>
+              業者仲間・協力会社とのネットワークが豊富なため、工程変更や急なご相談にも柔軟に対応可能です。
+            </p>
+          </div>
+          <div class="card">
+            <h3>一貫した施工管理</h3>
+            <p>
+              打ち合わせから現場管理、引き渡しまで一貫して対応し、工程・品質・安全を丁寧に管理します。
+            </p>
+          </div>
+          <div class="card">
+            <h3>見積作成対応</h3>
+            <p>
+              現場条件を踏まえた、現実的で無理のない見積作成を行い、円滑な着工につなげます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="service" aria-label="事業内容">
+        <div class="section-title">
+          <div>
+            <h2>事業内容</h2>
+            <p class="sub">見積作成から施工管理まで、ワンストップで対応</p>
+          </div>
+        </div>
+
+        <ul class="list">
+          <li>
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+            </div>
+            <div><strong>空調設備工事</strong>（見積作成〜施工管理）</div>
+          </li>
+          <li>
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+            </div>
+            <div><strong>換気工事</strong>（見積作成〜施工管理）</div>
+          </li>
+          <li>
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+            </div>
+            <div><strong>給排水設備工事</strong>（見積作成〜施工管理）</div>
+          </li>
+          <li>
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+            </div>
+            <div><strong>各設備断熱保温工事</strong>（見積作成〜施工管理）</div>
+          </li>
+        </ul>
+
+        <p class="note muted">※ 新築・改修工事ともにご相談可能です。</p>
+
+        <svg class="wave bottom" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,52 C140,92 280,92 420,52 C560,12 700,12 840,52 C980,92 1120,92 1260,52 C1340,28 1400,24 1440,30 L1440,120 L0,120 Z"
+                fill="rgba(207,233,255,.8)"></path>
+          <path d="M0,70 C160,110 320,110 480,70 C640,30 800,30 960,70 C1120,110 1280,110 1440,70 L1440,120 L0,120 Z"
+                fill="rgba(143,208,255,.45)"></path>
+        </svg>
+      </section>
+
+      <section id="works" aria-label="施工実績">
+        <div class="section-title">
+          <div>
+            <h2>施工実績</h2>
+            <p class="sub">守秘義務の都合上、詳細は非公開とさせていただいております</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>オフィス・商業施設</h3>
+            <p>設備工事（施工管理）</p>
+          </div>
+          <div class="card">
+            <h3>各種設備改修工事</h3>
+            <p>空調／換気／給排水（施工管理）</p>
+          </div>
+          <div class="card">
+            <h3>断熱保温工事</h3>
+            <p>各設備断熱保温（施工管理）</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="company" aria-label="会社概要">
+        <div class="section-title">
+          <div>
+            <h2>会社概要</h2>
+            <p class="sub">Company Profile</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="meta" style="gap:12px">
+            <div class="row">
+              <div class="label">会社名</div>
+              <div>株式会社テイオーフォース</div>
+            </div>
+            <div class="row">
+              <div class="label">所在地</div>
+              <div>
+                〒121-0823<br />
+                東京都足立区伊興2-10-9 シャレー伊興A6
+              </div>
+            </div>
+            <div class="row">
+              <div class="label">設立</div>
+              <div>2024年3月15日</div>
+            </div>
+            <div class="row">
+              <div class="label">事業内容</div>
+              <div>空調・換気・給排水・各設備断熱保温工事の施工管理</div>
+            </div>
+            <div class="row">
+              <div class="label">対応エリア</div>
+              <div>関東圏内（その他エリアはご相談ください）</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" aria-label="お問い合わせ">
+        <div class="contact-wrap">
+          <div class="contact-box">
+            <h2>お問い合わせ</h2>
+            <p class="sub" style="color:rgba(255,255,255,.86)">
+              設備工事の施工管理・お見積りのご相談はお気軽にご連絡ください。
+            </p>
+
+            <div class="contact-actions">
+              <a class="btn light" href="mailto:teio-force@outlook.jp">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+                teio-force@outlook.jp
+              </a>
+              <a class="btn ghost" href="tel:08058207488">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                080-5820-7488
+              </a>
+            </div>
+
+            <p class="note" style="color:rgba(255,255,255,.82)">
+              ※ お問い合わせ内容によっては、ご返信までお時間をいただく場合がございます。
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0">対応について</h3>
+            <p style="margin:0; color:rgba(15, 23, 42, .78)">
+              基本は関東圏内。その他エリアも案件内容によりご相談可能です。<br />
+              「現場条件」「工期」「管理範囲」など、まずは概要をお知らせください。
+            </p>
+
+            <div style="margin-top:14px; border-top:1px solid rgba(15,23,42,.08); padding-top:14px;">
+              <p class="muted" style="margin:0; font-size:13px;">
+                <strong>会社名：</strong>株式会社テイオーフォース<br />
+                <strong>所在地：</strong>東京都足立区伊興2-10-9 シャレー伊興A6
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-inner">
+          <div>© <span id="year"></span> 株式会社テイオーフォース</div>
+          <div class="muted">空調・換気・給排水・断熱保温｜施工管理</div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    // 年号を自動で表示
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
