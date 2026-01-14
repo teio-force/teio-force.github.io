@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>施工実績｜株式会社テイオーフォース</title>
+<meta name="description" content="株式会社テイオーフォースの施工実績。空調・換気・給排水・断熱保温の施工管理。">
+
+<style>
+:root{
+  --ink:#0b2233;
+  --muted:rgba(11,34,51,.72);
+  --line:rgba(11,34,51,.10);
+  --bg:#f7fbff;
+  --card:#ffffff;
+  --radius:20px;
+  --max:1120px;
+  --a1:#7ff6ff; --a2:#6bffd8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff,var(--bg))}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.head{max-width:var(--max);margin:0 auto;padding:14px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:12px}
+main{max-width:var(--max);margin:0 auto;padding:34px 14px 70px}
+.badge{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(135deg,var(--a1),var(--a2));font-weight:800}
+h1{letter-spacing:.12em;margin:10px 0 12px}
+.lead{color:var(--muted);line-height:1.9;margin:0 0 18px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}
+.chip{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:12px;cursor:pointer;user-select:none}
+.chip.active{background:linear-gradient(135deg,var(--a1),var(--show, var(--a2)));border-color:transparent;font-weight:800}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:980px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 14px 40px rgba(0,0,0,.05)}
+.card h3{margin:0 0 8px;letter-spacing:.06em}
+.meta{display:grid;gap:6px;font-size:13px;color:var(--muted)}
+.meta b{color:var(--ink)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#fff}
+
+.tablewrap{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+table{width:100%;border-collapse:collapse}
+th,td{padding:12px 12px;border-bottom:1px solid var(--line);font-size:13px;text-align:left}
+th{background:rgba(11,34,51,.04);letter-spacing:.06em}
+tfoot td{border-bottom:none;color:var(--muted)}
+.toggle{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:12px;cursor:pointer}
+.btn.on{background:linear-gradient(135deg,var(--a1),var(--a2));border-color:transparent;font-weight:800}
+
+.note{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;color:var(--muted);line-height:1.9}
+footer{padding:40px 14px 60px;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="head">
+    <div style="font-weight:900;letter-spacing:.12em">TEIO FORCE</div>
+    <nav class="nav">
+      <a href="index.html">TOP</a>
+      <a href="service.html">事業内容</a>
+      <a href="company.html">会社概要</a>
+      <a href="works.html">施工実績</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="badge">WORKS</div>
+  <h1>施工実績</h1>
+  <p class="lead">
+    写真がなくても“何ができる会社か”が伝わるよう、種別・内容・規模・担当範囲を整理して掲載しています。<br>
+    実績は増やしながら育てていけばOKです。
+  </p>
+
+  <div class="filters" aria-label="フィルター">
+    <div class="chip active" data-filter="all">すべて</div>
+    <div class="chip" data-filter="hvac">空調</div>
+    <div class="chip" data-filter="vent">換気</div>
+    <div class="chip" data-filter="plumb">給排水</div>
+    <div class="chip" data-filter="insul">断熱保温</div>
+  </div>
+
+  <!-- ===== カード（例：あとで内容を差し替え・追加OK） ===== -->
+  <div class="grid" id="cards">
+
+    <div class="card" data-cat="hvac vent">
+      <h3>都内オフィスビル｜設備更新</h3>
+      <div class="meta">
+        <div><b>内容：</b>空調更新／換気系統調整（施工管理）</div>
+        <div><b>規模：</b>中規模（フロア単位）</div>
+        <div><b>工期：</b>短期（夜間・休日調整可）</div>
+        <div><b>担当：</b>見積〜工程・安全・品質管理</div>
+        <div><b>エリア：</b>東京都</div>
+      </div>
+      <div class="tags">
+        <span class="tag">施工管理</span><span class="tag">工程調整</span><span class="tag">夜間対応</span>
+      </div>
+    </div>
+
+    <div class="card" data-cat="vent plumb">
+      <h3>飲食店舗｜新規・改修</h3>
+      <div class="meta">
+        <div><b>内容：</b>換気／給排水（施工管理）</div>
+        <div><b>規模：</b>店舗</div>
+        <div><b>工期：</b>短期</div>
+        <div><b>担当：</b>見積〜段取り・品質管理</div>
+        <div><b>エリア：</b>神奈川県</div>
+      </div>
+      <div class="tags">
+        <span class="tag">店舗</span><span class="tag">換気</span><span class="tag">給排水</span>
+      </div>
+    </div>
+
+    <div class="card" data-cat="insul hvac">
+      <h3>共同住宅｜保温・断熱</h3>
+      <div class="meta">
+        <div><b>内容：</b>配管保温／断熱（施工管理）</div>
+        <div><b>規模：</b>中〜大規模</div>
+        <div><b>工期：</b>中期</div>
+        <div><b>担当：</b>工程・品質・安全管理</div>
+        <div><b>エリア：</b>埼玉県</div>
+      </div>
+      <div class="tags">
+        <span class="tag">断熱保温</span><span class="tag">品質管理</span><span class="tag">安全管理</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== 表（一覧） ===== -->
+  <div class="toggle">
+    <div class="btn on" id="showBoth">カード＋一覧</div>
+    <div class="btn" id="showCards">カードのみ</div>
+    <div class="btn" id="showTable">一覧のみ</div>
+  </div>
+
+  <div class="tablewrap" id="tableWrap">
+    <table>
+      <thead>
+        <tr>
+          <th>案件</th>
+          <th>内容</th>
+          <th>担当</th>
+          <th>エリア</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr data-cat="hvac vent">
+          <td>都内オフィスビル｜設備更新</td>
+          <td>空調更新／換気系統調整</td>
+          <td>見積〜工程・安全・品質管理</td>
+          <td>東京都</td>
+        </tr>
+        <tr data-cat="vent plumb">
+          <td>飲食店舗｜新規・改修</td>
+          <td>換気／給排水</td>
+          <td>見積〜段取り・品質管理</td>
+          <td>神奈川県</td>
+        </tr>
+        <tr data-cat="insul hvac">
+          <td>共同住宅｜保温・断熱</td>
+          <td>配管保温／断熱</td>
+          <td>工程・品質・安全管理</td>
+          <td>埼玉県</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="4">※掲載内容はテンプレです。実績に合わせて更新していきましょう。</td></tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>実績の書き方（おすすめ）</strong><br>
+    ①案件種別（オフィス/店舗/工場/住宅） ②内容（空調/換気/給排水/断熱） ③規模（小/中/大） ④工期（短/中/長） ⑤担当（見積〜施工管理）<br>
+    写真がなくても、この5点が揃うと“プロの実績”として成立します。
+  </div>
+</main>
+
+<footer>© <span id="y"></span> TEIO FORCE Co.,Ltd</footer>
+
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+
+// Filter
+const chips=[...document.querySelectorAll(".chip")];
+const cards=[...document.querySelectorAll("#cards .card")];
+const rows=[...document.querySelectorAll("#tableBody tr")];
+
+function applyFilter(key){
+  cards.forEach(c=>{
+    const cat=c.getAttribute("data-cat")||"";
+    c.style.display=(key==="all"||cat.includes(key)) ? "" : "none";
+  });
+  rows.forEach(r=>{
+    const cat=r.getAttribute("data-cat")||"";
+    r.style.display=(key==="all"||cat.includes(key)) ? "" : "none";
+  });
+}
+chips.forEach(ch=>{
+  ch.addEventListener("click",()=>{
+    chips.forEach(x=>x.classList.remove("active"));
+    ch.classList.add("active");
+    applyFilter(ch.dataset.filter);
+  });
+});
+
+// Toggle view
+const btnBoth=document.getElementById("showBoth");
+const btnCards=document.getElementById("showCards");
+const btnTable=document.getElementById("showTable");
+const tableWrap=document.getElementById("tableWrap");
+const cardsWrap=document.getElementById("cards");
+
+function setOn(btn){
+  [btnBoth,btnCards,btnTable].forEach(b=>b.classList.remove("on"));
+  btn.classList.add("on");
+}
+btnBoth.onclick=()=>{setOn(btnBoth); cardsWrap.style.display="grid"; tableWrap.style.display="block";}
+btnCards.onclick=()=>{setOn(btnCards); cardsWrap.style.display="grid"; tableWrap.style.display="none";}
+btnTable.onclick=()=>{setOn(btnTable); cardsWrap.style.display="none"; tableWrap.style.display="block";}
+</script>
+</body>
+</html>
