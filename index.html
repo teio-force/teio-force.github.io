@@ -3,35 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>株式会社テイオーフォース｜空調・給排気設備 施工管理</title>
+<title>株式会社テイオーフォース｜施工管理</title>
 
 <style>
-:root{
-  --accent:#5fe0e6;
-  --dark:#022b3a;
-}
-
 *{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
   color:#fff;
-  background:#000;
+  background:#012;
 }
+a{text-decoration:none;color:inherit}
 
-/* ===== 背景（パララックス風） ===== */
+/* ===== 背景 ===== */
 .bg{
-  position:fixed;
-  inset:0;
-  background:url("waikiki.jpeg?v=500") center/cover no-repeat;
-  filter:brightness(1.2) saturate(1.15);
+  position:fixed; inset:0;
+  background:url("waikiki.jpeg?v=1000") center/cover no-repeat;
+  filter:brightness(1.15) saturate(1.15);
   z-index:-2;
-  transform:scale(1.08);
 }
-.overlay{
-  position:fixed;
-  inset:0;
+.ov{
+  position:fixed; inset:0;
   background:linear-gradient(
     to bottom,
     rgba(0,40,80,.25),
@@ -40,26 +32,60 @@ body{
   z-index:-1;
 }
 
-/* ===== 共通 ===== */
-section{
-  padding:80px 16px;
-  text-align:center;
+/* ===== HEADER ===== */
+header{
+  position:fixed; top:0; left:0; right:0;
+  z-index:50;
+  padding:14px;
+  background:linear-gradient(180deg,rgba(0,30,60,.6),rgba(0,30,60,0));
 }
-.box{
-  max-width:980px;
-  margin:0 auto;
-  background:rgba(255,255,255,.14);
-  border-radius:30px;
-  padding:36px 22px;
-  backdrop-filter:blur(16px);
+.head{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-h2{
-  margin-top:0;
-  letter-spacing:.15em;
+.logo-text{font-weight:900;letter-spacing:.12em}
+
+.nav{display:flex;gap:12px}
+.nav a{
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.2);
+  font-size:13px;
 }
-p{
-  line-height:1.9;
-  margin:0 0 14px;
+
+/* mobile */
+.menu-btn{display:none}
+.mobile-nav{display:none}
+
+@media(max-width:900px){
+  .nav{display:none}
+  .menu-btn{
+    display:block;
+    padding:10px 14px;
+    border-radius:999px;
+    border:none;
+    background:rgba(255,255,255,.25);
+    color:#fff;
+    font-weight:800;
+  }
+  .mobile-nav{
+    position:fixed;
+    top:70px; left:14px; right:14px;
+    background:rgba(0,40,80,.9);
+    border-radius:20px;
+    padding:14px;
+  }
+  .mobile-nav a{
+    display:block;
+    padding:14px;
+    margin:6px 0;
+    background:rgba(255,255,255,.15);
+    border-radius:14px;
+    font-weight:800;
+  }
 }
 
 /* ===== HERO ===== */
@@ -68,162 +94,78 @@ p{
   display:flex;
   align-items:center;
   justify-content:center;
+  text-align:center;
   padding:120px 16px 80px;
 }
-
-.logo{
+.hero img{
   max-width:1000px;
   width:100%;
-  margin:0 auto 30px;
+  margin-bottom:24px;
 }
-.logo img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
-.catch{
+h1{
   font-size:clamp(28px,5vw,46px);
-  letter-spacing:.1em;
-  margin-bottom:18px;
-  text-shadow:0 10px 30px rgba(0,0,0,.45);
+  line-height:1.3;
 }
-
 .lead{
-  font-size:14px;
-  opacity:.95;
   max-width:860px;
-  margin:0 auto 30px;
-}
-
-.cta{
-  display:flex;
-  gap:16px;
-  justify-content:center;
-  flex-wrap:wrap;
+  margin:20px auto;
+  line-height:1.9;
 }
 .btn{
+  display:inline-block;
+  margin:8px;
   padding:14px 26px;
   border-radius:999px;
-  background:linear-gradient(135deg,#7ff6ff,var(--accent));
+  background:linear-gradient(135deg,#7ff6ff,#6bffd8);
   color:#003b46;
-  font-weight:700;
-  text-decoration:none;
-  min-width:180px;
-}
-.btn.sub{
-  background:rgba(255,255,255,.25);
-  color:#fff;
-}
-
-/* ===== リスト ===== */
-.list{
-  display:grid;
-  gap:10px;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  margin-top:20px;
-  font-size:14px;
-}
-
-/* ===== FOOTER ===== */
-footer{
-  padding:40px 16px 60px;
-  text-align:center;
-  font-size:12px;
-  opacity:.7;
+  font-weight:900;
 }
 </style>
 </head>
 
 <body>
 <div class="bg"></div>
-<div class="overlay"></div>
+<div class="ov"></div>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <div class="logo">
-      <img src="logo-main.jpg?v=500" alt="Teio-Force Co.,Ltd">
-    </div>
-
-    <div class="catch">
-      現場を止めない。
-      空調・給排気設備の施工管理
-    </div>
-
-    <p class="lead">
-      空調・換気・給排水・各設備断熱保温工事の<br>
-      見積作成から施工管理まで一貫対応。<br>
-      業者ネットワークを活かした柔軟な対応力で、<br>
-      ワイキキの朝のように、心地よく現場を支えます。
-    </p>
-
-    <div class="cta">
-      <a class="btn" href="#contact">お問い合わせ</a>
-      <a class="btn sub" href="tel:08058207488">080-5820-7488</a>
-    </div>
+<header>
+  <div class="head">
+    <div class="logo-text">TEIO FORCE</div>
+    <button class="menu-btn" id="menuBtn">MENU</button>
+    <nav class="nav">
+      <a href="index.html">TOP</a>
+      <a href="service.html">事業内容</a>
+      <a href="company.html">会社概要</a>
+      <a href="works.html">施工実績</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
   </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">TOP</a>
+  <a href="service.html">事業内容</a>
+  <a href="company.html">会社概要</a>
+  <a href="works.html">施工実績</a>
+  <a href="contact.html">お問い合わせ</a>
 </div>
 
-<!-- 事業内容 -->
-<section>
-  <div class="box">
-    <h2>事業内容</h2>
-    <p>
-      ・空調設備工事 施工管理<br>
-      ・換気設備工事 施工管理<br>
-      ・給排水設備工事 施工管理<br>
-      ・各設備断熱保温工事 施工管理<br>
-      ・設備設計業務
+<section class="hero">
+  <div>
+    <img src="logo-main.jpg?v=1000" alt="Teio Force">
+    <h1>現場を止めない。<br>空調・給排気設備の施工管理</h1>
+    <p class="lead">
+      空調・換気・給排水・断熱保温工事の施工管理。<br>
+      見積作成から施工管理まで一貫対応。<br>
+      関東圏内を中心に柔軟な対応を行います。
     </p>
+    <a class="btn" href="contact.html">お問い合わせ</a>
   </div>
 </section>
 
-<!-- 会社概要 -->
-<section>
-  <div class="box">
-    <h2>会社概要</h2>
-    <p>
-      会社名：株式会社テイオーフォース<br>
-      代表取締役：木原 進之介<br>
-      設立：2024年3月15日<br>
-      所在地：東京都足立区伊興2-10-9 シャレー伊興A6<br>
-      対応エリア：関東圏内（その他エリアはご相談）
-    </p>
-  </div>
-</section>
-
-<!-- 取引会社 -->
-<section>
-  <div class="box">
-    <h2>取引会社</h2>
-    <div class="list">
-      <div>株式会社バウハウス丸栄</div>
-      <div>足立工業株式会社</div>
-      <div>株式会社樹創</div>
-      <div>株式会社オール</div>
-      <div>株式会社銀寿</div>
-      <div>株式会社ハルノヤ</div>
-      <div>株式会社STP</div>
-      <div>株式会社リョーズワークス</div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="box">
-    <h2>お問い合わせ</h2>
-    <p>
-      メール：teio-force@outlook.jp<br>
-      電話：080-5820-7488
-    </p>
-  </div>
-</section>
-
-<footer>
-© 2026 TEIO FORCE Co.,Ltd
-</footer>
-
+<script>
+const btn=document.getElementById("menuBtn");
+const nav=document.getElementById("mobileNav");
+btn.onclick=()=>{nav.style.display=nav.style.display==="block"?"none":"block";}
+</script>
 </body>
 </html>
