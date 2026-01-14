@@ -3,79 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>事業内容｜株式会社テイオーフォース</title>
-<meta name="description" content="株式会社テイオーフォースの事業内容。空調・換気・給排水・断熱保温・設備設計・施工管理。">
-
+<title>事業内容｜テイオーフォース</title>
 <style>
-:root{
-  --ink:#0b2233;
-  --muted:rgba(11,34,51,.72);
-  --line:rgba(11,34,51,.10);
-  --bg:#f7fbff;
-  --card:#ffffff;
-  --a1:#7ff6ff; --a2:#6bffd8;
-  --radius:20px;
-  --max:1120px;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:linear-gradient(180deg,#ffffff,var(--bg))}
-a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.head{max-width:var(--max);margin:0 auto;padding:14px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.nav{display:flex;gap:10px;flex-wrap:wrap}
-.nav a{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:12px}
-main{max-width:var(--max);margin:0 auto;padding:34px 14px 70px}
-h1{letter-spacing:.12em;margin:6px 0 12px}
-.lead{color:var(--muted);line-height:1.9;margin:0 0 18px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 14px 40px rgba(0,0,0,.05)}
-.card strong{display:block;letter-spacing:.06em;margin-bottom:6px}
-.badge{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(135deg,var(--a1),var(--a2));font-weight:800}
-.note{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;line-height:1.9;color:var(--muted)}
-footer{padding:40px 14px 60px;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+body{margin:0;font-family:sans-serif;background:#e9fbff;color:#023}
+header{padding:14px;background:#c7f4ff}
+nav a{margin-right:12px}
+main{max-width:900px;margin:auto;padding:40px 16px}
+h1{letter-spacing:.1em}
 </style>
 </head>
-
 <body>
 <header>
-  <div class="head">
-    <div style="font-weight:900;letter-spacing:.12em">TEIO FORCE</div>
-    <nav class="nav">
-      <a href="index.html">TOP</a>
-      <a href="service.html">事業内容</a>
-      <a href="company.html">会社概要</a>
-      <a href="works.html">施工実績</a>
-      <a href="contact.html">お問い合わせ</a>
-    </nav>
-  </div>
+<nav>
+<a href="index.html">TOP</a>
+<a href="service.html">事業内容</a>
+<a href="company.html">会社概要</a>
+<a href="works.html">施工実績</a>
+<a href="contact.html">お問い合わせ</a>
+</nav>
 </header>
-
 <main>
-  <div class="badge">SERVICE</div>
-  <h1>事業内容</h1>
-  <p class="lead">
-    空調・換気・給排水・断熱保温工事の<strong>施工管理</strong>を中心に、<strong>設備設計業務</strong>まで対応。<br>
-    見積作成から施工管理まで一貫して、現場がスムーズに回る段取りをつくります。
-  </p>
-
-  <div class="grid">
-    <div class="card"><strong>空調設備工事</strong>見積作成〜施工管理</div>
-    <div class="card"><strong>換気設備工事</strong>見積作成〜施工管理</div>
-    <div class="card"><strong>給排水設備工事</strong>見積作成〜施工管理</div>
-    <div class="card"><strong>各設備断熱保温工事</strong>見積作成〜施工管理</div>
-    <div class="card"><strong>設備設計業務</strong>計画・検討・図面対応（応相談）</div>
-    <div class="card"><strong>施工管理</strong>工程・品質・安全・コストの最適化</div>
-  </div>
-
-  <div class="note">
-    <strong>強み</strong><br>
-    ・対応力：業者仲間が多く、状況に応じて柔軟に手配・調整が可能<br>
-    ・一貫対応：見積作成から施工管理まで一本化し、意思決定が早い
-  </div>
+<h1>事業内容</h1>
+<ul>
+<li>空調設備工事 施工管理</li>
+<li>換気設備工事 施工管理</li>
+<li>給排水設備工事 施工管理</li>
+<li>各設備断熱保温工事</li>
+<li><strong>設備設計業務</strong></li>
+<li>見積作成〜施工管理まで一貫対応</li>
+</ul>
 </main>
-
-<footer>© <span id="y"></span> TEIO FORCE Co.,Ltd</footer>
-<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 </body>
 </html>
