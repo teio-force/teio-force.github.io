@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>お問い合わせ｜株式会社テイオーフォース</title>
+<meta name="description" content="株式会社テイオーフォースへのお問い合わせ。電話・メールで受付。">
+
+<style>
+:root{
+  --ink:#0b2233;
+  --muted:rgba(11,34,51,.72);
+  --line:rgba(11,34,51,.10);
+  --bg:#f7fbff;
+  --card:#ffffff;
+  --radius:20px;
+  --max:1120px;
+  --a1:#7ff6ff; --a2:#6bffd8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff,var(--bg))}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.head{max-width:var(--max);margin:0 auto;padding:14px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:12px}
+main{max-width:var(--max);margin:0 auto;padding:34px 14px 70px}
+.badge{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(135deg,var(--a1),var(--a2));font-weight:800}
+h1{letter-spacing:.12em;margin:10px 0 12px}
+.lead{color:var(--muted);line-height:1.9;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:0 14px 40px rgba(0,0,0,.05)}
+.card strong{display:block;margin-bottom:8px}
+.btn{display:block;text-align:center;margin-top:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(135deg,var(--a1),var(--a2));font-weight:900}
+.subbtn{display:block;text-align:center;margin-top:10px;padding:14px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;font-weight:900}
+footer{padding:40px 14px 60px;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="head">
+    <div style="font-weight:900;letter-spacing:.12em">TEIO FORCE</div>
+    <nav class="nav">
+      <a href="index.html">TOP</a>
+      <a href="service.html">事業内容</a>
+      <a href="company.html">会社概要</a>
+      <a href="works.html">施工実績</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="badge">CONTACT</div>
+  <h1>お問い合わせ</h1>
+  <p class="lead">施工管理・見積作成のご相談はお気軽にご連絡ください。</p>
+
+  <div class="grid">
+    <div class="card">
+      <strong>お電話</strong>
+      080-5820-7488
+      <a class="btn" href="tel:08058207488">電話する</a>
+    </div>
+
+    <div class="card">
+      <strong>メール</strong>
+      teio-force@outlook.jp
+      <a class="btn" href="mailto:teio-force@outlook.jp">メールする</a>
+      <a class="subbtn" href="works.html">施工実績を見る</a>
+    </div>
+  </div>
+</main>
+
+<footer>© <span id="y"></span> TEIO FORCE Co.,Ltd</footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>
