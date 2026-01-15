@@ -3,21 +3,17 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>株式会社テイオーフォース｜空調・換気・給排水 施工管理</title>
-<meta name="description" content="株式会社テイオーフォース｜空調・換気・給排水・断熱保温・設備設計。見積作成から施工管理まで一貫対応。関東圏内中心。">
+<title>事業内容｜株式会社テイオーフォース</title>
+<meta name="description" content="株式会社テイオーフォースの事業内容。空調・換気・給排水・断熱保温の施工管理、設備設計業務に対応。">
 
 <style>
 :root{
   --max:1120px;
   --ink:#0b2233;
-  --muted:rgba(11,34,51,.72);
   --glass:rgba(255,255,255,.16);
   --line:rgba(255,255,255,.40);
-  --line2:rgba(11,34,51,.12);
   --shadow:0 18px 70px rgba(0,0,0,.18);
   --radius:28px;
-  --a1:#7ff6ff;
-  --a2:#6bffd8;
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -62,7 +58,6 @@ header{
   justify-content:space-between;
   gap:10px;
 }
-.brand{display:flex;align-items:center}
 .company-name{
   font-weight:900;
   letter-spacing:.12em;
@@ -118,98 +113,46 @@ header{
   .menu-btn{display:inline-flex}
 }
 
-/* ===== Page layout ===== */
+/* ===== Page ===== */
 main{padding-top:86px}
-.hero{
-  min-height:calc(100vh - 86px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:34px 0 70px;
-}
+.hero{padding:34px 0 70px}
 .glass{
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: var(--glass);
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow);
-  padding: 34px 22px;
+  padding: 28px 20px;
 }
-.center{text-align:center}
-.logo-wrap{
-  width:min(860px,92vw);
-  margin:0 auto 22px;
-}
-.logo-wrap img{width:100%;height:auto;display:block}
 h1{
-  margin:0 0 12px;
-  font-size:clamp(28px,5vw,46px);
+  margin:0 0 10px;
+  font-size:clamp(24px,4vw,34px);
   letter-spacing:.10em;
-  line-height:1.25;
-  text-shadow:0 10px 30px rgba(0,0,0,.35);
 }
-.lead{
-  margin:0 auto 22px;
-  max-width:860px;
-  font-size:14px;
-  line-height:1.9;
+p{
+  margin:0;
   color:rgba(255,255,255,.94);
+  line-height:1.9;
+  font-size:14px;
 }
-.cta{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:6px;
-}
-.btn{
-  min-width:170px;
-  padding:14px 22px;
-  border-radius:999px;
-  font-weight:900;
-  letter-spacing:.06em;
-  display:inline-block;
-  text-align:center;
-}
-.btn.primary{
-  background:linear-gradient(135deg,var(--a1),var(--a2));
-  color:#003b46;
-}
-.btn.sub{
-  background:rgba(255,255,255,.22);
-  border:1px solid rgba(255,255,255,.25);
-  color:#fff;
-  backdrop-filter:blur(10px);
-}
-.quick{
-  margin-top:18px;
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-  font-size:12px;
-}
-.quick a{border-bottom:1px solid rgba(255,255,255,.65);padding-bottom:2px}
 
-.sections{
-  padding:0 0 80px;
-}
 .grid{
   display:grid;
   gap:14px;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
+  margin-top:14px;
 }
 @media(max-width:980px){.grid{grid-template-columns:1fr}}
 .card{
-  border-radius:24px;
+  border-radius:22px;
   border:1px solid rgba(255,255,255,.26);
   background:rgba(255,255,255,.12);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 14px 50px rgba(0,0,0,.14);
+  backdrop-filter:blur(14px);
   padding:18px;
 }
 .card h3{margin:0 0 8px;font-size:15px;letter-spacing:.08em}
-.card p{margin:0;color:rgba(255,255,255,.90);font-size:13px;line-height:1.8}
+.list{margin:0;padding-left:18px}
+.list li{margin:8px 0;color:rgba(255,255,255,.92);line-height:1.8}
 
 footer{
   padding:40px 14px 60px;
@@ -226,10 +169,7 @@ footer{
 
 <header>
   <div class="head">
-    <div class="brand">
-      <span class="company-name">株式会社テイオーフォース</span>
-    </div>
-
+    <div class="company-name">株式会社テイオーフォース</div>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">MENU</button>
 
     <nav class="nav" aria-label="ナビゲーション">
@@ -253,52 +193,58 @@ footer{
 <main>
   <section class="hero">
     <div class="container">
-      <div class="glass center">
+      <div class="glass">
+        <h1>事業内容</h1>
+        <p>見積から施工管理まで一貫対応。現場の品質・安全・工程を支えるため、最適な体制を組み、段取りと調整で前に進めます。</p>
 
-        <div class="logo-wrap">
-          <img src="logo-main.jpg?v=9999" alt="Teio-Force Co.,Ltd">
-        </div>
-
-        <h1>現場を止めない。<br>空調・給排気設備の施工管理</h1>
-
-        <p class="lead">
-          空調・換気・給排水・各設備断熱保温工事の施工管理。<br>
-          見積作成から施工管理まで一貫対応。業者ネットワークを活かした柔軟な対応力で現場を支えます。<br>
-          対応エリア：関東圏内（その他エリアはご相談）
-        </p>
-
-        <div class="cta">
-          <a class="btn primary" href="contact.html">お問い合わせ</a>
-          <a class="btn sub" href="tel:08058207488">080-5820-7488</a>
-          <a class="btn sub" href="mailto:teio-force@outlook.jp">メール</a>
-        </div>
-
-        <div class="quick">
-          <a href="service.html">事業内容を見る</a>
-          <a href="works.html">施工実績を見る</a>
-          <a href="company.html">会社概要を見る</a>
-        </div>
-      </div>
-
-      <div style="height:18px"></div>
-
-      <section class="sections">
         <div class="grid">
           <div class="card">
-            <h3>強み：対応力</h3>
-            <p>協力業者ネットワークが多く、現場条件に合わせた柔軟な体制構築が可能です。</p>
+            <h3>空調設備工事（施工管理）</h3>
+            <ul class="list">
+              <li>工程・品質・安全管理</li>
+              <li>協力会社の手配・調整</li>
+              <li>見積作成〜引渡しまで一貫対応</li>
+            </ul>
           </div>
+
           <div class="card">
-            <h3>強み：一貫した施工管理</h3>
-            <p>見積作成から施工管理まで、窓口を一本化してスムーズに推進します。</p>
+            <h3>換気工事（施工管理）</h3>
+            <ul class="list">
+              <li>給排気・排煙・ダクト関連の管理</li>
+              <li>現場状況に合わせた段取り調整</li>
+              <li>変更対応・追加工事の整理</li>
+            </ul>
           </div>
+
           <div class="card">
-            <h3>相談しやすいスピード感</h3>
-            <p>急な工程変更や追加要望にも、現実的な代替案で前に進めます。</p>
+            <h3>給排水設備工事（施工管理）</h3>
+            <ul class="list">
+              <li>配管・衛生設備の施工管理</li>
+              <li>各種書類・検査対応</li>
+              <li>見積・数量整理</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>各設備 断熱保温工事（施工管理）</h3>
+            <ul class="list">
+              <li>断熱・保温の仕様確認</li>
+              <li>工程の組み込み／干渉調整</li>
+              <li>品質確認・写真管理</li>
+            </ul>
+          </div>
+
+          <div class="card" style="grid-column:1/-1">
+            <h3>設備設計業務</h3>
+            <ul class="list">
+              <li>設備計画の整理・仕様検討</li>
+              <li>協力先と連携した図面検討・調整</li>
+              <li>実行予算・VE検討のサポート</li>
+            </ul>
           </div>
         </div>
-      </section>
 
+      </div>
     </div>
   </section>
 </main>
