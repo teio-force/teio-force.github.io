@@ -3,51 +3,168 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>事業内容｜テイオーフォース</title>
+<title>施工実績｜株式会社テイオーフォース</title>
+<meta name="description" content="株式会社テイオーフォースの施工実績。">
 
 <style>
+:root{
+  --max:1120px; --ink:#0b2233; --muted:rgba(11,34,51,.72);
+  --line:rgba(11,34,51,.12); --shadow:0 18px 70px rgba(0,0,0,.12);
+  --radius:28px; --a1:#7ff6ff; --a2:#6bffd8;
+}
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
-  color:#023;
-  background:
-    linear-gradient(180deg,#eafcff,#d6fbff,#c7f4ff,#eafff6);
-}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;color:var(--ink);overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-header{padding:14px;background:#c7f4ff}
-nav a{margin-right:12px;font-weight:700}
-main{max-width:900px;margin:auto;padding:40px 16px}
-.card{
-  background:rgba(255,255,255,.9);
-  border-radius:20px;
-  padding:28px;
-}
+.bg{position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(1000px 600px at 20% 10%, rgba(255,255,255,.85), rgba(255,255,255,0) 55%),
+  radial-gradient(900px 520px at 80% 0%, rgba(255,255,255,.65), rgba(255,255,255,0) 52%),
+  linear-gradient(180deg, #eafcff 0%, #d6fbff 35%, #c7f4ff 65%, #eafff6 100%);background-attachment:fixed}
+.ov{position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg, rgba(1,35,60,.03), rgba(1,35,60,.10))}
+header{position:sticky;top:0;z-index:50;padding:14px;background:rgba(255,255,255,.70);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.head{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.logo-text{font-weight:900;letter-spacing:.12em}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.85);font-size:12px;font-weight:800}
+.menu-btn{display:none;padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.85);color:var(--ink);font-weight:900;letter-spacing:.06em}
+.mobile-nav{display:none;position:fixed;top:66px;left:14px;right:14px;z-index:60;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:var(--shadow);padding:12px}
+.mobile-nav a{display:block;padding:14px 12px;margin:8px 0;border-radius:16px;border:1px solid rgba(11,34,51,.10);background:rgba(255,255,255,.92);font-weight:900}
+@media(max-width:900px){.nav{display:none}.menu-btn{display:inline-flex}}
+main{max-width:var(--max);margin:0 auto;padding:34px 14px 80px}
+.hero{border-radius:var(--radius);border:1px solid rgba(255,255,255,.60);background:rgba(255,255,255,.58);backdrop-filter:blur(14px);box-shadow:var(--shadow);padding:28px 22px}
+.badge{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(135deg,var(--a1),var(--a2));font-weight:900;letter-spacing:.08em}
+h1{margin:12px 0 10px;letter-spacing:.12em}
+.lead{margin:0 0 18px;color:var(--muted);line-height:1.9}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+@media(max-width:980px){.grid{grid-template-columns:1fr}}
+.card{background:rgba(255,255,255,.92);border:1px solid rgba(11,34,51,.10);border-radius:20px;padding:18px}
+.card h3{margin:0 0 8px;letter-spacing:.06em}
+.meta{display:grid;gap:6px;font-size:13px;color:var(--muted);line-height:1.7}
+.meta b{color:var(--ink)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(11,34,51,.10);background:rgba(255,255,255,.95)}
+.tablewrap{margin-top:18px;background:rgba(255,255,255,.92);border:1px solid rgba(11,34,51,.10);border-radius:20px;overflow:hidden}
+table{width:100%;border-collapse:collapse}
+th,td{padding:12px 12px;border-bottom:1px solid rgba(11,34,51,.10);font-size:13px;text-align:left}
+th{background:rgba(11,34,51,.04);letter-spacing:.06em}
+tfoot td{border-bottom:none;color:var(--muted)}
 </style>
 </head>
+
 <body>
+<div class="bg"></div><div class="ov"></div>
+
 <header>
-<nav>
-<a href="index.html">TOP</a>
-<a href="service.html">事業内容</a>
-<a href="company.html">会社概要</a>
-<a href="works.html">施工実績</a>
-<a href="contact.html">お問い合わせ</a>
-</nav>
+  <div class="head">
+    <div class="logo-text">TEIO FORCE</div>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">MENU</button>
+    <nav class="nav">
+      <a href="index.html">TOP</a>
+      <a href="service.html">事業内容</a>
+      <a href="company.html">会社概要</a>
+      <a href="works.html">施工実績</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
 </header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">TOP</a>
+  <a href="service.html">事業内容</a>
+  <a href="company.html">会社概要</a>
+  <a href="works.html">施工実績</a>
+  <a href="contact.html">お問い合わせ</a>
+</div>
+
 <main>
-<h1>施工実績</h1>
+  <section class="hero">
+    <div class="badge">WORKS</div>
+    <h1>施工実績</h1>
+    <p class="lead">
+      写真がなくても“何ができる会社か”が伝わるよう、種別・内容・規模・担当範囲で整理しています。<br>
+      ※下の内容はテンプレなので、実績に合わせて差し替えていきましょう。
+    </p>
 
-<div class="card">
-<h3>都内オフィスビル</h3>
-<p>空調・換気設備 施工管理</p>
-</div>
+    <div class="grid">
+      <div class="card">
+        <h3>都内オフィスビル｜設備更新</h3>
+        <div class="meta">
+          <div><b>内容：</b>空調更新／換気系統調整（施工管理）</div>
+          <div><b>規模：</b>中規模（フロア単位）</div>
+          <div><b>工期：</b>短期（夜間・休日調整可）</div>
+          <div><b>担当：</b>見積〜工程・安全・品質管理</div>
+          <div><b>エリア：</b>東京都</div>
+        </div>
+        <div class="tags">
+          <span class="tag">施工管理</span><span class="tag">工程調整</span><span class="tag">夜間対応</span>
+        </div>
+      </div>
 
-<div class="card">
-<h3>飲食店舗</h3>
-<p>給排水・換気設備 施工管理</p>
-</div>
+      <div class="card">
+        <h3>飲食店舗｜新規・改修</h3>
+        <div class="meta">
+          <div><b>内容：</b>換気／給排水（施工管理）</div>
+          <div><b>規模：</b>店舗</div>
+          <div><b>工期：</b>短期</div>
+          <div><b>担当：</b>見積〜段取り・品質管理</div>
+          <div><b>エリア：</b>神奈川県</div>
+        </div>
+        <div class="tags">
+          <span class="tag">店舗</span><span class="tag">換気</span><span class="tag">給排水</span>
+        </div>
+      </div>
 
+      <div class="card">
+        <h3>共同住宅｜保温・断熱</h3>
+        <div class="meta">
+          <div><b>内容：</b>配管保温／断熱（施工管理）</div>
+          <div><b>規模：</b>中〜大規模</div>
+          <div><b>工期：</b>中期</div>
+          <div><b>担当：</b>工程・品質・安全管理</div>
+          <div><b>エリア：</b>埼玉県</div>
+        </div>
+        <div class="tags">
+          <span class="tag">断熱保温</span><span class="tag">品質管理</span><span class="tag">安全管理</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>案件</th><th>内容</th><th>担当</th><th>エリア</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>都内オフィスビル｜設備更新</td><td>空調更新／換気系統調整</td><td>見積〜工程・安全・品質管理</td><td>東京都</td></tr>
+          <tr><td>飲食店舗｜新規・改修</td><td>換気／給排水</td><td>見積〜段取り・品質管理</td><td>神奈川県</td></tr>
+          <tr><td>共同住宅｜保温・断熱</td><td>配管保温／断熱</td><td>工程・品質・安全管理</td><td>埼玉県</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="4">※実績が増えたらカードと一覧に同じ内容を追加してください。</td></tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
 </main>
+
+<footer>© <span id="y"></span> TEIO FORCE Co.,Ltd</footer>
+
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+const btn=document.getElementById("menuBtn");
+const nav=document.getElementById("mobileNav");
+if(btn && nav){
+  btn.addEventListener("click",()=>{
+    const open = nav.style.display==="block";
+    nav.style.display = open ? "none" : "block";
+    btn.setAttribute("aria-expanded", String(!open));
+  });
+  document.addEventListener("click",(e)=>{
+    if(!nav.contains(e.target) && e.target !== btn){
+      nav.style.display="none";
+      btn.setAttribute("aria-expanded","false");
+    }
+  });
+}
+</script>
 </body>
 </html>
